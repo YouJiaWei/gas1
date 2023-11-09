@@ -1,0 +1,31 @@
+問1. アプリが強制終了してしまったりエラーが発生した際にまず確認するものは何か?
+回答：
+まず、Logcatにエラーログが出力されていないかを確認する。
+エラーログにはなぜそのエラーが発生したのかのヒントがあります。
+※強制終了してしまった場合は「FATAL EXCEPTION」がないか探す。
+
+問2. 実行中のアプリの画面表示の確認を行う際に使用するツールは何か?
+回答：
+Layout Inspectorは画面レイアウトを確認するツールです。
+
+
+
+intent.putExtra(MainActivity2.EXTRA_TEXT_MAIN , "MainActivityからのメッ
+セージ");
+
+
+
+// IntentのExtra情報に設定するキー MainActivityから参照するのでpublic
+public static final String EXTRA_TEXT_MAIN =
+"com.tutorial.web.app. extra.EXTRA_TEXT_MAIN";
+
+
+
+// SubActivityを起動したIntentを取得
+Intent intent = getIntent();
+// Intentから文字列情報を取得
+String text = intent.getStringExtra (EXTRA_TEXT_MAIN);
+
+// TextViewに取得した文字列を設定
+TextView textView = findViewById (R.id.text_main);
+textView.setText(text);

@@ -1,0 +1,38 @@
+        // TextViewの取得
+        TextView textView = findViewById (R.id.text_main);
+        // TextViewへの文字列設定
+        textView.setVext(R.string.hello);
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Web App1</string>
+    <string name="hello">こんにちは</string>
+</resources>
+
+
+コミットメッセージ:
+Chapter.07 リソース、レイアウト チャプター課題
+・[修正内容]：
+①「strings.xml」ファイルに
+<?xml version="1.0" encoding="utf-8"?>
+<string name="hello">こんにちは</string>
+を追加
+
+②「MainActivity.java」ファイルに
+　　　　import android.widget.TextView;
+
+　　　　// TextViewの取得
+        TextView textView = findViewById (R.id.text_main);
+        // TextViewへの文字列設定
+        TextView.setText(R.string.hello);
+を追加
+
+③「activity_main.xml」ファイルに
+　　android:id="@+id/text_main"
+を追加
+　　android:text="@string/hello"
+に修正
+
+④
+

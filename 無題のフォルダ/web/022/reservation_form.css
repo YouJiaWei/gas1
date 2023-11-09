@@ -1,0 +1,99 @@
+.requiredLabel {
+color: orange;
+}
+.buttonLabel {
+color: rgb(0, 162, 216);
+font-weight: bold;
+}
+
+/* calender */
+.before {
+color: gray;
+}
+.empty {
+color: rgb(136, 241, 199);
+font-weight: bold;
+}
+.full {
+color: violet;
+font-weight: bold;
+}
+
+/* form */
+.form input,
+.form select,
+.form textarea,
+.form div.option {
+display: inline-block;
+vertical-align: middle;
+}
+
+/* footer */
+footer {
+border-top: solid 1px lightgray;
+padding-bottom: 10px;
+}
+footer .nav-list,
+footer .copy-right {
+text-align: center;
+}
+footer .nav-list-item {
+padding: 0 4px;
+display: inline-block;
+}
+
+.calendar td:nth-child(1):not(.before) {
+color: rgb(246, 101, 101);
+}
+.calendar td:nth-child(7):not(.before) {
+color: rgb(0, 162, 216);
+}
+
+/* header */
+header {
+width: 100%;
+padding: 15px 0;
+margin: 0 auto;
+text-align: center;
+border-bottom: solid 1px lightgray;
+}
+header .headline {
+font-size: 32px;
+}
+header .headline a {
+color: wheat;
+}
+header .nav-list {
+text-align: center;
+padding: 10px 0;
+}
+header .nav-list-item {
+list-style: none;
+display: inline-block;
+margin: 0 20px;
+}
+
+.required:before {
+content: "【必須】";
+color: orange;
+font-weight: bold;
+}
+
+input {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    @media screen and (max-width: 576px)
+    {
+    .form input,
+    .form select,
+    div.option {
+    width: 100%;
+    }
+    div.option {
+    padding-left: 20px;
+    }
+    }
+
+

@@ -1,0 +1,19 @@
+.requiredLabel {
+color: orange;
+}
+.buttonLabel {
+color: rgb(0, 162, 216);
+font-weight: bold;
+}
+/* calender */
+.before {
+color: gray;
+}
+.empty {
+color: rgb(136, 241, 199);
+font-weight: bold;
+}
+.full {
+color: violet;
+font-weight: bold;
+}

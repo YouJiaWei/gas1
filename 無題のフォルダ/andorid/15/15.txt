@@ -1,0 +1,131 @@
+Chapter.15 画面間䛾データ連携2 チャプター課題
+[修正内容]
+①小股さんから頂いたコメントについて：
+・EditText の高さの指定は dimens.xml にする
+
+・MainActivityファイルにソースコード側の設定をコメントアウト
+
+・「LinearLayout」を「ConstraintLayout」に修正
+
+②本課題について：
+
+
+
+
+
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<dimen name="height_margin">48dp</dimen>
+
+<string name="sub_activity">Sub Activity</string>ぶ削除
+android:text="@string/sub_activity"ぶ削除
+
+    <EditText
+        android:id="@+id/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_margin"
+        android:autofillHints="no"
+        android:gravity="top"
+        android:hint="@string/input_text_hint"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_1"
+
+
+
+
+<EditText
+        android:id="@+id/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_margin"
+        android:autofillHints="no"
+        android:gravity="top"
+        android:hint="@string/input_text_hint"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_main"
+        />
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_1"
+        app:layout_constraintStart_toStartOf ="@id/input_text"
+        app:layout_constraintTop_toBottomOf ="@id/input_text"
+        />
+
+private final ActivityResultCallback<ActivityResult> mResultCallback = new ActivityResultCallback <ActivityResult >() {
+        @Override
+        public void onActivityResult(ActivityResult result) { // 起動したActivityが終了した際に呼ばれるコールバック
+　　　　　　// resultから情報を取得
+        }
+    };必要なし、↓ある
+
+    private ActivityResultLauncher<Intent> mActivityResultLauncher ;
+    @Override
+    protected void onCreate(Bundle savedInstanceState ) {
+        //~中略~
+　　　　　　　　// Activityからの結果を受け取るコールバックを登録してActivityを起動するためのランチャーを取得
+                mActivityResultLauncher = registerForActivityResult (
+                new ActivityResultContracts.StartActivityForResult (), mResultCallback );
+    }
+
+
+　　　　　// SubActivityを起動し、SubActivityから結果を受け取る
+            Intent intent = new Intent(MainActivity .this, MainActivity2.class);
+            mActivityResultLauncher .launch(intent);
+
+
+
+
+
+
+
+
+    private final View.OnClickListener mButtonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra(EXTRA_TEXT_MAIN , "SubActivityからのメッセージ" );
+// 実行結果とIntentを結果として設定する
+            setResult(RESULT_OK, resultIntent);
+// Activityを終了する
+            finish();
+        }
+    };
+
+
+
+
+
+
+
+
+private final ActivityResultCallback <ActivityResult > mResultCallback = new ActivityResultCallback <ActivityResult >() {
+        @Override
+        public void onActivityResult(ActivityResult result) { // 起動したActivityが終了した際に呼ばれるコールバック
+// resultから情報を取得
+            int resultCode = result.getResultCode ();
+// RESULT_OKの場合、設定されたデータを取得
+            if (RESULT_OK == resultCode) {
+// データを取得してTextViewに表示
+                Intent data = result.getData();
+                if (null != data) {
+                    String text = data.getStringExtra (MainActivity2.EXTRA_TEXT_MAIN );
+                    mMainTextView.setText(message);
+                }
+            }
+        }
+    };
+
+
+Button button_2 = findViewById(R.id.button_2);
+        button_2.setOnClickListener(mButtonClickListener);

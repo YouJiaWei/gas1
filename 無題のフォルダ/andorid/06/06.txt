@@ -1,0 +1,21 @@
+<pre>
+public class TestData {
+	int num;
+    public void test1() {
+        num = 1;
+        
+    }
+    public void test2() {
+        num = 2;
+        
+    }
+    public void test3() {   	
+        System.out.println("num:" + num);
+        test1();
+        System.out.println("num:" + num);
+        test2();
+        System.out.println("num:" + num);
+    }
+    
+}
+</pre>

@@ -1,0 +1,44 @@
+Chapter.08 画面作成 チャプター課題
+・TextViewの画面中央に表示されているので下側の制約を削除して上に配置し
+横幅はMatch Constraintにして横いっぱいに広げて配置します。
+
+・ButtonのTopをTextViewのBottomに配置する制約を追加します。
+　ButtonのStartをTextViewのStartに揃えるように配置します。
+
+・全体的に8dpの余白を設けるようにConstraintLayoutにpaddingで8pを指定しています。
+
+Button button1 = findViewById (R.id.button_1);
+        button1.setText(R.string.button_1);
+
+
+android:padding="@dimen/layout_padding"
+
+<TextView
+        android:id="@+id/text_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_1"
+        app:layout_constraintStart_toStartOf ="@id/text_main"
+        app:layout_constraintTop_toBottomOf ="@id/text_main"
+        />
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<dimen name="layout_padding">8dp</dimen>
+</resources>
+
+
+<string name="button_1">ボタン</string>
+

@@ -1,0 +1,11 @@
+Chapter.17 WebViewの使い方2 チャプター課題と
+Chapter.18 WebViewの使い方3 チャプター課題
+
+・[修正内容]
+①Chapter.17について：
+・URL画面の表示が出来ました。
+・「Androidからの入力」が入力された状態になりました。
+
+②Chapter.18について：
+・Subactivity画面に遷移することが出来ました。
+・SubActivity画面テキストボックスに入力した文字列をWebページのテキストボックスに表示がまだ出来ました。

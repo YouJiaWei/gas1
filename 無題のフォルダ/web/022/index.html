@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>フルスタック講習予約フォーム</title>
+    <link rel="stylesheet" href="./reservation_form.css" />
+    <!-- Copyright © 2019 Kognise
+    Released under the MIT license
+    https://github.com/kognise/water.css/blob/master/LICENSE.md -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./card.css" />
+  </head>
+  <body>
+    <header>
+     <h1 class="headline"><a href="">フルスタック講習</a></h1>
+     <nav>
+      <button class="assist_btn">スマホ</button>
+      <ul class="nav-list">
+       <li class="nav-list-item"><a href="">Home</a></li>
+       <li class="nav-list-item"><a href="#about">About</a></li>
+       <li class="nav-list-item">Reservation</li>
+      </ul>
+     </nav>
+    </header>
+    
+    <main>
+      <h2>フルスタック講習予約フォーム</h2>
+      <article class="contents">
+       <p id="about" class="message">
+        本ページは、フルスタック講習の予約用フォームとなります。
+        <br />
+        <span class="requiredLabel">必要事項</span>
+        を入力の上、「
+        <span class="buttonLabel">予約ボタン</span>
+        」を押してください。
+       </p>
+      </article>
+      
+      <article class="form">
+       <form
+        method="post"
+        action=""
+        id="reservationForm"
+        onSubmit="alert('予約しますか?')"
+       >
+       <section class="contents">
+        <h2>講習情報</h2>
+        <section class="date">
+         <h4>予約日時</h4>
+         <p>
+          <label class="required" for="reservationDate" name="reservationDateLabel">受講希望日:</label>
+          <input
+           type="date"
+           id="reservationDate"
+           name="reservationDate"
+           value="2022-10-01"
+          />
+          <label class="required" for="reservationHour">時間:</label>
+          <select id="reservationHour" name="hourType">
+           <option value="1" selected>10:00〜11:00</option>
+           <option value="2">13:00〜14:00</option>
+           <option value="3">16:00〜17:00</option>
+           <option value="4">19:00〜20:00</option>
+          </select>
+         </p>
+        </section>
+        <section class="schedule">
+         <h4>2022年 09/25 〜 10/15 スケジュール</h4>
+         <table border="2" class="calendar">
+          <tr>
+           <th>SUN</th><th>MAN</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th>
+          </tr>
+          <tr>
+           <td class="before">25</td><td class="before">26</td><td class="before">27</td><td class="before">28<p>終了</p></td>
+           <td class="before">29</td><td class="before">30</td><td>1<p><span class="empty">空あり</span></p></td>
+          </tr>
+          <tr>
+          <td>2</td><td>3</td><td>4</td><td>5<p><span class="empty">空あり</span></p></td><td>6</td>
+          <td>7</td><td>8<p><span class="full">満員</span></p></td>
+          </tr>
+          <tr>
+           <td>9</td><td>10</td><td>11</td><td>12<p><span class="full">満員</span></p></td>
+           <td>13</td><td>14</td><td>15<p><span class="empty">空あり</span></p></td>
+          </tr>
+         </table>
+        </section>
+        <section class="courses">
+         <h4><label class="required">受講コース一覧</label></h4>
+         <div class="card-list">
+         
+          <div class="card">
+           <div class="card-content">
+            <h1 class="card-title">新人向け</h1>
+            <p class="card-text">
+             <input type="radio" id="caurse1" name="course" value="1" />
+             <label for="「ID」">受講する</label>
+            </p>
+           </div>
+           <div class="card-link">
+          <a>コースについて</a>
+         </div>
+        </div>
+        
+        <div class="card">
+         <div class="card-content">
+          <h1 class="card-title">初級</h1>
+           <p class="card-text">
+           <input type="radio" id="caurse2" name="course" value="2" />
+           <label for="「ID」">受講する</label>
+           </p>
+        </div>
+        <div class="card-link">
+         <a>コースについて</a>
+        </div>
+       </div>
+
+       <div class="card">
+        <div class="card-content">
+         <h1 class="card-title">中級</h1>
+          <p class="card-text">
+          <input type="radio" id="caurse3" name="course" value="3" />
+          <label for="「ID」">受講する</label>
+          </p>
+       </div>
+       <div class="card-link">
+        <a>コースについて</a>
+       </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+         <h1 class="card-title">上級</h1>
+          <p class="card-text">
+          <input type="radio" id="caurse4" name="course" value="4" />
+          <label for="「ID」">受講する</label>
+          </p>
+       </div>
+       <div class="card-link">
+        <a>コースについて</a>
+       </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+         <h1 class="card-title">アドバンスド</h1>
+          <p class="card-text">
+          <input type="radio" id="caurse5" name="course" value="5" />
+          <label for="「ID」">受講する</label>
+          </p>
+       </div>
+       <div class="card-link">
+        <a>コースについて</a>
+       </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+         <h1 class="card-title">ESG</h1>
+          <p class="card-text">
+          <input type="radio" id="caurse6" name="course" value="6" />
+          <label for="「ID」">受講する</label>
+          </p>
+       </div>
+       <div class="card-link">
+        <a>コースについて</a>
+       </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+         <h1 class="card-title">超級</h1>
+          <p class="card-text">
+          <input type="radio" id="caurse7" name="course" value="7" />
+          <label for="「ID」">受講する</label>
+          </p>
+       </div>
+       <div class="card-link">
+        <a>コースについて</a>
+       </div>
+      </div>
+        
+       </div>
+        </section>
+        <section class="option">
+         <h4>その他</h4>
+         <div>
+         <label>受講オプション:</label>
+         <div class="option">
+          <p><input type="checkbox" id="trainingOption1" name="trainingOption" value="0" />
+           <label for="trainingOption1">講習資料の紙媒体での配布あり </label></p>
+          <p><input type="checkbox" id="trainingOption2" name="trainingOption" value="1" />
+           <label for="trainingOption2">オンラインでの参加のみ </label></p>
+          <p><input type="checkbox" id="trainingOption3" name="trainingOption" value="2" />
+           <label for="trainingOption3">受講した講習のアーカイブ利用 </label></p>
+         </div>
+         </div>
+         <div>
+         <label class="required">初めてのご利用ですか?: </label>
+         <div class="option">
+          <p><input type="radio" id="attended" name="isAttended" value="0" checked />
+           <label for="attended">いいえ。以前も受講したことがあります。 </label></p>
+          <p><input type="radio" id="noAttended" name="isAttended" value="1" />
+           <label for="noAttended">はい。初めての利用です。 </label></p>
+         </div>
+         </div>
+        </section>
+       </section>
+       <section class="user">
+        <h2>受講者情報</h2>
+        <p>
+         <label class="required" for="lName" name="lNameLabel">苗字:</label>
+         <input
+          type="text"
+          id="lName"
+          name="lName"
+          placeholder="例:システナ"
+         />
+         <label class="required" for="fName" name="fNameLabel">名前:</label>
+         <input
+          type="text"
+          id="fName"
+          name="fName"
+          placeholder="例:太郎"
+         />
+        </p>
+        <p>
+         <label class="required" for="tel" name="telNumLabel">電話番号:</label>
+         <input
+          type="tel"
+          id="tel"
+          name="telNum"
+          placeholder="例:09012345678"
+         />
+        </p>
+        <p>
+         <label class="required" for="mail" name="mailLabel">メールアドレス:</label>
+         <input type="email" id="mail" name="mail" />
+        </p>
+        <p>
+         <label for="other" name="otherLabel">備考:</label>
+         <textarea id="other" name="other"></textarea>
+        </p>
+       </section>
+       <section class="control">
+        <p>
+         <input type="submit" value="予約" name="reservationButton" />
+        </p>
+       </section>
+     </form>
+      </article>
+    </main>
+      
+    <footer>
+     <ul class="nav-list">
+      <li class="nav-list-item"><a>サイトマップ</a></li>
+      <li class="nav-list-item"><a>利用規約</a></li>
+      <li class="nav-list-item">
+       <a href="https://www.systena.co.jp/" target="_blank">SystenaHP</a>
+      </li>
+      <li class="nav-list-item">
+      <a href="mailto:test@fullstack.systena.co.jp">問い合わせ(メール) </a>
+      </li>
+     </ul>
+     <p class="copy-right">© All rights reserved by full-stack training.</p>
+    </footer>
+    
+  </body>
+</html>

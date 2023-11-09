@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>フルスタック講習予約フォーム</title>
+  </head>
+  <body>
+    <header>
+     <h1 class="headline"><a href="">フルスタック講習</a></h1>
+     <nav>
+      <ul class="nav-list">
+       <li class="nav-list-item"><a href="">Home</a></li>
+       <li class="nav-list-item"><a href="#about">About</a></li>
+       <li class="nav-list-item">Reservation</li>
+      </ul>
+     </nav>
+    </header>
+    
+    <main>
+      <h2>フルスタック講習予約フォーム</h2>
+      <article class="contents">
+       <p id="about" class="message">
+        本ページは、フルスタック講習の予約用フォームとなります。
+        <br />
+        <span style="color: orange">必要事項</span>
+        を入力の上、「
+        <span style="color: rgb(0, 162, 216)"><b>予約ボタン</b></span>
+        」を押してください。
+       </p>
+      </article>
+      
+      <article class="form">
+       <form
+        method="post"
+        action=""
+        id="reservationForm"
+        onSubmit="alert('予約しますか?')"
+       >
+       <section class="contents">
+        <h2>講習情報</h2>
+        <section class="date">
+         <h4>予約日時</h4>
+         <p>
+          <label for="reservationDate" name="reservationDateLabel">受講希望日:</label>
+          <input
+           type="date"
+           id="reservationDate"
+           name="reservationDate"
+           value="2022-10-01"
+          />
+          <label for="reservationHour">時間:</label>
+          <select id="reservationHour" name="hourType">
+           <option value="1" selected>10:00〜11:00</option>
+           <option value="2">13:00〜14:00</option>
+           <option value="3">16:00〜17:00</option>
+           <option value="4">19:00〜20:00</option>
+          </select>
+         </p>
+        </section>
+        <section class="schedule">
+         <h4>2022年 09/25 〜 10/15 スケジュール</h4>
+         <table border="2" class="calendar">
+          <tr>
+           <th>SUN</th><th>MAN</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th>
+          </tr>
+          <tr>
+           <td>25</td><td>26</td><td>27</td><td>28<p>終了</p></td><td>29</td><td>30</td><td>1<p>空あり</p></td>
+          </tr>
+          <tr>
+          <td>2</td><td>3</td><td>4</td><td>5<p>空あり</p></td><td>6</td><td>7</td><td>8<p>満員</p></td>
+          </tr>
+          <tr>
+           <td>9</td><td>10</td><td>11</td><td>12<p>満員</p></td><td>13</td><td>14</td><td>15<p>空あり</p></td>
+          </tr>
+         </table>
+        </section>
+        <section class="courses">
+         <h4>受講コース一覧</h4>
+         コース一覧
+        </section>
+        <section class="option">
+         <h4>その他</h4>
+         <label>受講オプション:</label>
+         <div class="option">
+          <p><input type="checkbox" id="trainingOption1" name="trainingOption" value="0" />
+           <label for="trainingOption1">講習資料の紙媒体での配布あり </label></p>
+          <p><input type="checkbox" id="trainingOption2" name="trainingOption" value="1" />
+           <label for="trainingOption2">オンラインでの参加のみ </label></p>
+          <p><input type="checkbox" id="trainingOption3" name="trainingOption" value="2" />
+           <label for="trainingOption3">受講した講習のアーカイブ利用 </label></p>
+         </div>
+         <label>初めてのご利用ですか?: </label>
+         <div class="option">
+          <p><input type="radio" id="attended" name="isAttended" value="0" checked />
+           <label for="attended">いいえ。以前も受講したことがあります。 </label></p>
+          <p><input type="radio" id="noAttended" name="isAttended" value="1" />
+           <label for="noAttended">はい。初めての利用です。 </label></p>
+         </div>
+        </section>
+       </section>
+       <section class="user">
+        <h2>受講者情報</h2>
+        <p>
+         <label for="lName" name="lNameLabel">苗字:</label>
+         <input
+          type="text"
+          id="lName"
+          name="lName"
+          placeholder="例:システナ"
+         />
+         <label for="fName" name="fNameLabel">名前:</label>
+         <input
+          type="text"
+          id="fName"
+          name="fName"
+          placeholder="例:太郎"
+         />
+        </p>
+        <p>
+         <label for="tel" name="telNumLabel">電話番号:</label>
+         <input
+          type="tel"
+          id="tel"
+          name="telNum"
+          placeholder="例:09012345678"
+         />
+        </p>
+        <p>
+         <label for="mail" name="mailLabel">メールアドレス:</label>
+         <input type="email" id="mail" name="mail" />
+        </p>
+        <p>
+         <label for="other" name="otherLabel">備考:</label>
+         <textarea id="other" name="other"></textarea>
+        </p>
+       </section>
+       <section class="control">
+        <p>
+         <input type="submit" value="予約" name="reservationButton" />
+        </p>
+       </section>
+     </form>
+      </article>
+    </main>
+      
+    <footer>
+     <ul class="nav-list">
+      <li class="nav-list-item"><a>サイトマップ</a></li>
+      <li class="nav-list-item"><a>利用規約</a></li>
+      <li class="nav-list-item">
+       <a href="https://www.systena.co.jp/" target="_blank">SystenaHP</a>
+      </li>
+      <li class="nav-list-item">
+      <a href="mailto:test@fullstack.systena.co.jp">問い合わせ(メール) </a>
+      </li>
+     </ul>
+     <p class="copy-right">© All rights reserved by full-stack training.</p>
+    </footer>
+  </body>
+</html>

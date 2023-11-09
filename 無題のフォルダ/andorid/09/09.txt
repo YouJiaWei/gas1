@@ -1,0 +1,33 @@
+Chapter.09 コールバック チャプター課題
+・ボタンが押されたときのイベントリスナを設定しました
+　　button_1.setOnClickListener (mButtonClickListener );
+
+・ボタンイベントリスナ
+    private final View.OnClickListener mButtonClickListener
+            = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) { // Callbackメソッド
+
+・ボタンが押された時の処理を実装しました
+    Snackbar.make(view, "ボタンが押されました!" , Snackbar.LENGTH_SHORT ).show();
+
+
+
+        Button button_1 = findViewById (R.id.button_1);
+        button_1.setText(R.string.button_1);
+
+        // ボタンが押されたときのイベントリスナを設定する
+        button_1.setOnClickListener (mButtonClickListener );
+    }
+
+    // ボタンイベントリスナ
+    private final View.OnClickListener mButtonClickListener
+            = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) { // Callbackメソッド
+            // ボタンが押された時の処理を実装
+            Snackbar.make(view, "ボタンが押されました!" , Snackbar.LENGTH_SHORT ).show();
+        }
+    };
+
+

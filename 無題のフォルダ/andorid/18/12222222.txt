@@ -1,0 +1,37 @@
+private final ActivityResultCallback<ActivityResult> mResultCallback = new ActivityResultCallback <ActivityResult >() {
+        @Override
+        public void onActivityResult(ActivityResult result) { // 起動したActivityが終了した際に呼ばれるコールバック
+            // resultから情報を取得
+            int resultCode = result.getResultCode ();
+            // RESULT_OKの場合、設定されたデータを取得
+            if (RESULT_OK == resultCode) {
+                // データを取得してTextViewに表示
+                Intent data = result.getData();
+                if (null != data) {
+                    String text = data.getStringExtra (MainActivity2.EXTRA_TEXT_MAIN );
+                    //mMainTextView.setText(message);
+                    String script = "document.getElementById('text1').value='" +text+"';";
+                    mWebView.evaluateJavascript (script, null);
+
+                }
+            }
+        }
+    };
+
+private ActivityResultLauncher<Intent> mActivityResultLauncher;
+
+//        // Activityからの結果を受け取るコールバックを登録してActivityを起動するためのランチャーを取得
+        mActivityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(), mResultCallback);
+
+
+public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            Uri url = request.getUrl();
+            // アプリ起動用URLの場合、SubActivityを表示する
+            if (URL_START_APP.equals(url)) {
+                Intent intent = new Intent(WebViewActivity.this, MainActivity2.class);
+                mActivityResultLauncher.launch(intent);
+                return true; // URL読み込み処理をキャンセル
+            }
+            return false; // URL読み込み処理を実施
+        }

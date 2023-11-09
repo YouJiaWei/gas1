@@ -1,0 +1,8 @@
+POST https://httpbin.org/post
+
+
+{
+    "name": "ProtoOut Studio",
+    "category": "school",
+    "message": "ProtoOut Studioは日本初のプロトタイピング専門スクールです。"
+}
